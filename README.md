@@ -1,4 +1,5 @@
 # Project Template: React/Rails API
+# Wagon Wheel Hotel
 
 ## Description
 
