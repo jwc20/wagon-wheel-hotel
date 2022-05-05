@@ -1,5 +1,14 @@
-# Project Template: React/Rails API
+# DEVELOPMENT BRANCH
+
 # Wagon Wheel Hotel
+
+### Endpoints
+
+### Entity Relationship Diagram
+
+### Wireframes
+
+# Project Template: React/Rails API
 
 ## Description
 
