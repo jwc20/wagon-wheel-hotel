@@ -4,7 +4,7 @@
 
 ## Entity Relationship Diagram
 
-![Wagon Wheel Hotel ERD](./public/wagon-wheel-hotel-entity-relationship-diagram.png)
+![Wagon Wheel Hotel ERD](./public/wagon-wheel-hotel-entity-relationship-diagram-new.png)
 
 ## Wireframes
 ![Home Page](./public/wireframes/home.png)
