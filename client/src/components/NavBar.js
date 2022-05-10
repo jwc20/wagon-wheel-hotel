@@ -1,51 +1,45 @@
-// src/components/NavBar.js
 import React from "react";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-const linkStyles = {
-  display: "inline-block",
-  width: "50px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
-};
+const NavUnlisted = styled.ul`
+  display: flex;
+  background-color: rgb(37, 150, 190);
+  a {
+    text-decoration: none;
+    padding-left: 50px;
+  }
+  li {
+    color: white;
+    margin: 0 0.8rem;
+    font-size: 2.3rem;
+    position: relative;
+    list-style: none;
+  }
+  .current {
+    li {
+      border-bottom: 2px solid black;
+    }
+  }
+`;
+
+const links = [
+  { name: "Home", path: "/" },
+  { name: "Rooms", path: "/rooms" },
+  { name: "Reviews", path: "/reviews" },
+  { name: "Reservation", path: "/reserve" },
+  { name: "Login", path: "/login" },
+];
 
 function NavBar() {
   return (
-    <div>
-      <NavLink
-        to="/"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/about"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        About
-      </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        Login
-      </NavLink>
-    </div>
+    <NavUnlisted>
+      {links.map((link, index) => (
+        <NavLink key={index} to={link.path} exact activeClassName="current">
+          <li>{link.name}</li>
+        </NavLink>
+      ))}
+    </NavUnlisted>
   );
 }
 
