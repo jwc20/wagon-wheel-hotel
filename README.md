@@ -7,6 +7,7 @@
 ![Wagon Wheel Hotel ERD](./public/wagon-wheel-hotel-entity-relationship-diagram-new.png)
 
 ## Wireframes
+
 ![Home Page](./public/wireframes/home.png)
 ![Rooms Page](./public/wireframes/rooms.png)
 ![Reviews Page](./public/wireframes/reviews.png)
@@ -32,7 +33,8 @@
 - See all reservations
 - See all reviews
 
-### Directory: 
+### Directory:
+
 ```
 .
 ├── CONTRIBUTING.md
@@ -125,25 +127,26 @@
 - Heroku CLI
 - Postgresql
 
-
 ## What's working:
-- Authentication / Authorization users 
+
+- Authentication / Authorization users
 
 ## What's was working:
+
 - Logging in
+- Creating reservations (both in Postman and with React form) stopped working.
 
 ## What's not working:
-- Creating reservations (both in Postman and with React form) stopped working.
-  - Searching components for getting reservations 
-- Username does not stay persistant after logging in 
+
+- Searching engine for getting reservations
+- Username does not stay persistant after logging in
 - Deployment
 - styling
 
-## Mistakes: 
+## Mistakes:
 
 - Spent too much time trying to install styling libraries like Tailwindcss to this outdated repo
 - Had too large entity relationship model to handle.
   - Spent too much time getting rid of models, fixing schema, migrating and seeding.
 - Not being more descriptive in git commits
   - was rektless in deleting files (Login.js) and adding new components (Dialog)
-
