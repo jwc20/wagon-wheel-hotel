@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Dialog } from "@reach/dialog";
+import "@reach/dialog/styles.css";
 
 function Auth() {
   const [username, setUsername] = useState("");
@@ -21,7 +23,7 @@ function Auth() {
     }).then((res) => {
       if (res.ok) {
         // res.json().then(setCurrentUser);
-        console.log(res.json())
+        console.log(res.json());
       } else {
         res.json().then((e) => setErrors(Object.entries(e.error).flat()));
       }
@@ -30,6 +32,7 @@ function Auth() {
 
   return (
     <div>
+      <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -38,6 +41,7 @@ function Auth() {
             <input
               type="text"
               value={username}
+              required
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
@@ -50,6 +54,7 @@ function Auth() {
             <input
               type="password"
               value={password}
+              required
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
@@ -62,6 +67,7 @@ function Auth() {
             <input
               type="text"
               value={email}
+              required
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
