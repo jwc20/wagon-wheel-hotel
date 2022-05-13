@@ -31,7 +31,7 @@ const links = [
   { name: "Home", path: "/" },
   { name: "Rooms", path: "/rooms" },
   { name: "Reviews", path: "/reviews" },
-  { name: "Reservation", path: "/reserve" },
+  { name: "Reservations", path: "/reservations" },
   { name: "Signup", path: "/auth" },
   // { name: "Login", path: "/login" },
   // { name: "Logout", path: "/logout" },

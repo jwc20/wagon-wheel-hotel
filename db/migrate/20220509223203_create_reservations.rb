@@ -4,7 +4,6 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.integer :guest_id
       t.datetime :start_date
       t.datetime :end_date
-      t.decimal :discount_percent
       t.decimal :total_price
 
       t.timestamps

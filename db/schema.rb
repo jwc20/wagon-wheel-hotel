@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2022_05_12_212202) do
     t.integer "guest_id"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.decimal "discount_percent"
     t.decimal "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
