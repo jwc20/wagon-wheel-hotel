@@ -40,7 +40,8 @@ function RoomCard({ room }) {
           <span aria-hidden>×</span>
         </button>
         <h1>{room.room_name}</h1>
-        <p>Type: {room.description}</p>
+        <p>Type: {room.room_type}</p>
+        <p>Description: {room.description}</p>
         <p>Price: ${room.current_price}</p>
       </Dialog>
     </div>

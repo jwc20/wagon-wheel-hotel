@@ -45,24 +45,24 @@
 ├── Rakefile
 ├── app
 │   ├── channels
-│   │   └── application_cable
-│   │       ├── channel.rb
-│   │       └── connection.rb
 │   ├── controllers
 │   │   ├── application_controller.rb
-│   │   ├── concerns
-│   │   └── fallback_controller.rb
+│   │   ├── reservations_controller.rb
+│   │   ├── rooms_controller.rb
+│   │   └── users_controller.rb
 │   ├── jobs
-│   │   └── application_job.rb
 │   ├── mailers
-│   │   └── application_mailer.rb
 │   ├── models
 │   │   ├── application_record.rb
-│   │   └── concerns
+│   │   ├── reservation.rb
+│   │   ├── room.rb
+│   │   └── user.rb
+│   ├── serializers
+│   │   ├── reservation_serializer.rb
+│   │   ├── reservation_with_user_and_room_serializer.rb
+│   │   ├── room_serializer.rb
+│   │   └── user_serializer.rb
 │   └── views
-│       └── layouts
-│           ├── mailer.html.erb
-│           └── mailer.text.erb
 ├── bin
 │   ├── rails
 │   ├── rake
@@ -70,78 +70,51 @@
 │   └── spring
 ├── client
 │   ├── README.md
+│   ├── build
 │   ├── package-lock.json
 │   ├── package.json
 │   ├── public
-│   │   ├── favicon.ico
-│   │   ├── index.html
-│   │   ├── logo192.png
-│   │   ├── logo512.png
-│   │   ├── manifest.json
-│   │   └── robots.txt
 │   └── src
-│       ├── App.css
-│       ├── App.js
-│       ├── App.test.js
+│       ├── components
+│       │   ├── App.js
+│       │   ├── Auth.js
+│       │   ├── Login.js
+│       │   ├── NavBar.js
+│       │   ├── ReservationList.js
+│       │   ├── ReservationRow.js
+│       │   ├── ReviewList.js
+│       │   ├── ReviewRow.js
+│       │   ├── RoomCard.js
+│       │   ├── RoomList.js
+│       │   ├── Router.js
+│       │   └── SignUp.js
 │       ├── index.css
 │       ├── index.js
-│       ├── logo.svg
-│       ├── reportWebVitals.js
-│       └── setupTests.js
+│       └── pages
+│           ├── Home.js
+│           ├── Reservations.js
+│           ├── Reviews.js
+│           ├── Rooms.js
+│           └── logo.svg
 ├── config
-│   ├── application.rb
-│   ├── boot.rb
-│   ├── cable.yml
-│   ├── credentials.yml.enc
-│   ├── database.yml
-│   ├── environment.rb
-│   ├── environments
-│   │   ├── development.rb
-│   │   ├── production.rb
-│   │   └── test.rb
-│   ├── initializers
-│   │   ├── application_controller_renderer.rb
-│   │   ├── backtrace_silencers.rb
-│   │   ├── cors.rb
-│   │   ├── filter_parameter_logging.rb
-│   │   ├── inflections.rb
-│   │   ├── mime_types.rb
-│   │   └── wrap_parameters.rb
-│   ├── locales
-│   │   └── en.yml
-│   ├── puma.rb
-│   ├── routes.rb
-│   ├── spring.rb
-│   └── storage.yml
 ├── config.ru
 ├── db
+│   ├── migrate
+│   │   ├── 20220513094708_create_users.rb
+│   │   ├── 20220513094822_create_reservations.rb
+│   │   └── 20220513094943_create_rooms.rb
+│   ├── schema.rb
 │   └── seeds.rb
 ├── lib
-│   └── tasks
-│       ├── install.rake
-│       └── start.rake
 ├── log
-│   └── development.log
+├── package-lock.json
 ├── package.json
 ├── public
-│   ├── robots.txt
-│   ├── wagon-wheel-hotel-entity-relationship-diagram.png
-│   └── wireframes
-│       ├── home.png
-│       ├── reviews.png
-│       └── rooms.png
 ├── spec
-│   ├── rails_helper.rb
-│   └── spec_helper.rb
 ├── storage
 └── tmp
-    ├── development_secret.txt
-    ├── pids
-    │   └── server.pid
-    ├── restart.txt
-    └── sockets
 
-30 directories, 75 files
+39 directories, 127 files
 
 ```
 
@@ -151,3 +124,26 @@
 - NodeJS (v16), and npm
 - Heroku CLI
 - Postgresql
+
+
+## What's working:
+- Authentication / Authorization users 
+
+## What's was working:
+- Logging in
+
+## What's not working:
+- Creating reservations (both in Postman and with React form) stopped working.
+  - Searching components for getting reservations 
+- Username does not stay persistant after logging in 
+- Deployment
+- styling
+
+## Mistakes: 
+
+- Spent too much time trying to install styling libraries like Tailwindcss to this outdated repo
+- Had too large entity relationship model to handle.
+  - Spent too much time getting rid of models, fixing schema, migrating and seeding.
+- Not being more descriptive in git commits
+  - was rektless in deleting files (Login.js) and adding new components (Dialog)
+

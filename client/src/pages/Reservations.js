@@ -10,12 +10,10 @@ function Reservations() {
   const close = () => setOpenModal("none");
 
   const [guest_id, setGuestID] = useState("");
-  const [room_id, setRoomID] = useState('');
+  const [room_id, setRoomID] = useState("");
   const [start_date, setStartDate] = useState("");
   const [end_date, setEndDate] = useState("");
   const [price, setPrice] = useState(0);
-
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -40,9 +38,13 @@ function Reservations() {
   return (
     <div>
       <h1>Reservations</h1>
-      <ReservationList />
+      <div className="register">
+        <ReservationList />
+      </div>
 
-      <button onClick={() => setOpenModal("reserve")}>Create reservation</button>
+      <button onClick={() => setOpenModal("reserve")}>
+        Create reservation
+      </button>
 
       {/* Dialog */}
       <Dialog aria-label="Reservation form" isOpen={openModal === "reserve"}>
