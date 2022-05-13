@@ -19,7 +19,7 @@ function Router() {
         <Auth />
       </Route>
       <Route exact path="/">
-        <Home />
+        <Rooms />
       </Route>
     </Switch>
   );

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import RoomList from "../components/RoomList";
 
 function Rooms() {
-  const [rooms, setRooms] = useState([]);
 
   return (
     <div>

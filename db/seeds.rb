@@ -26,11 +26,11 @@ h8 = Room.create!(room_number: 8, description: "", room_type: "luxury", current_
 h9 = Room.create!(room_number: 9, description: "", room_type: "luxury", current_price: 100.00)
 h0 = Room.create!(room_number: 0, description: "", room_type: "luxury", current_price: 100.00)
 
-d1 = DateTime.current
-d2 = d1.change(day: 1)
+d1 = DateTime.new(2022, 1, 11)
+d2 = DateTime.new(2022, 1, 12)
 
-r1 = Reservation.create!(guest_id: u1.id, room_id: h1.id, start_date: d1, end_date: d2, price: 10.00)
-r2 = Reservation.create!(guest_id: u2.id, room_id: h2.id, start_date: d1, end_date: d2, price: 15.00)
+r1 = Reservation.create(guest_id: u1.id, room_id: h1.id, start_date: d1, end_date: d2, price: 10.00)
+r2 = Reservation.create(guest_id: u2.id, room_id: h2.id, start_date: d1, end_date: d2, price: 15.00)
 =begin
 r3 = Reservation.create(guest_id: 3, room_id: 3, start_date: d1, end_date: d2, price: 110.00)
 r4 = Reservation.create(guest_id: 4, room_id: 4, start_date: d1, end_date: d2, price: 20.00)

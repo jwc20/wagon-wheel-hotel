@@ -11,22 +11,24 @@ function ReservationList() {
       .then(setReservations);
   }, []);
 
+  const reservationRow = reservations.map((reservation) => (
+    <ReservationRow key={reservation.id} reservation={reservation} />
+  ));
+
   return (
     <div>
-      <CTable>
-        <CTableHead>
-          <CTableRow>
-            <CTableHeaderCell scope="col">#</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Start Date</CTableHeaderCell>
-            <CTableHeaderCell scope="col">End Date</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Total Price</CTableHeaderCell>
-          </CTableRow>
-        </CTableHead>
-
-        {reservations.map((reservation) => (
-          <ReservationRow key={reservation.id} reservation={reservation} />
-        ))}
-      </CTable>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Guest ID</th>
+            <th scope="col">Room ID</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>{reservationRow}</tbody>
+      </table>
     </div>
   );
 }

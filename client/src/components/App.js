@@ -1,6 +1,7 @@
 import NavBar from "./NavBar";
 import Router from "./Router";
 import Auth from "./Auth";
+import Home from "../pages/Home";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -17,17 +18,7 @@ function App() {
         });
       }
     });
-
-    // fetch("/productions")
-    //   .then((res) => res.json())
-    //   .then(setProductions);
   }, []);
-
-  // if (!isAuthenticated) return <Login error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
-  if (!isAuthenticated) {
-    console.log("please log in")
-  }
-
 
   function handleLogin() {
     setUser(user);

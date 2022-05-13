@@ -28,7 +28,6 @@ const NavUnlisted = styled.ul`
 `;
 
 const links = [
-  { name: "Home", path: "/" },
   { name: "Rooms", path: "/rooms" },
   { name: "Reservations", path: "/reservations" },
   { name: "Signup", path: "/auth" },

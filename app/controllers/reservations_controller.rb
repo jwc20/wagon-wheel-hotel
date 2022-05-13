@@ -2,12 +2,9 @@ class ReservationsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   def index
-    user = User.find_by(id: params[:guest_id])
-    if user
-      @reservations = user.reservations.order(:date)
-    else
-      render json: ["No User"], status: :not_found
-    end
+    #user = User.find_by(id: params[:guest_id])
+    #render json: reservation.find_by()
+    render json: Reservation.all
   end
 
   def show
