@@ -30,7 +30,6 @@ const NavUnlisted = styled.ul`
 const links = [
   { name: "Home", path: "/" },
   { name: "Rooms", path: "/rooms" },
-  { name: "Reviews", path: "/reviews" },
   { name: "Reservations", path: "/reservations" },
   { name: "Signup", path: "/auth" },
   // { name: "Login", path: "/login" },
@@ -142,7 +141,6 @@ function NavBar({ onLogin, onLogout, setIsAuthenticated }) {
           </div>
           <input type="submit" value="Submit" />
         </form>
-        <button onClick={() => setOpenModal("none")}>Close</button>
         {error ? <div>{error}</div> : null}
       </Dialog>
     </div>

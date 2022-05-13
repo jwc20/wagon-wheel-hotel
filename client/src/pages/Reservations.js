@@ -10,9 +10,10 @@ function Reservations() {
   const close = () => setOpenModal("none");
 
   const [guest_id, setGuestID] = useState("");
+  const [room_id, setRoomID] = useState('');
   const [start_date, setStartDate] = useState("");
   const [end_date, setEndDate] = useState("");
-  const [total_price, setTotalPrice] = useState(0);
+  const [price, setPrice] = useState(0);
 
 
 
@@ -20,9 +21,10 @@ function Reservations() {
     e.preventDefault();
     const reservation = {
       guest_id: guest_id,
+      room_id: room_id,
       start_date: start_date,
       end_date: end_date,
-      total_price: total_price,
+      price: price,
     };
     fetch("/reservations", {
       method: "POST",
@@ -61,6 +63,15 @@ function Reservations() {
           </div>
           <div>
             <input
+              type="integer"
+              name="room_id"
+              placeholder="Room ID"
+              required
+              onChange={(e) => setRoomID(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
               type="date"
               name="start_date"
               placeholder="Start Date"
@@ -80,15 +91,14 @@ function Reservations() {
           <div>
             <input
               type="decimal"
-              name="total_price"
+              name="price"
               placeholder="Total Price"
               required
-              onChange={(e) => setTotalPrice(e.target.value)}
+              onChange={(e) => setPrice(e.target.value)}
             />
           </div>
           <input type="submit" value="Submit" />
         </form>
-        <button onClick={() => setOpenModal("none")}>Close</button>
       </Dialog>
     </div>
   );
