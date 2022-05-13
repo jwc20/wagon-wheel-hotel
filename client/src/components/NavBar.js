@@ -29,7 +29,7 @@ const NavUnlisted = styled.ul`
 
 const links = [
   { name: "Home", path: "/" },
-  { name: "Rooms", path: "/hotel_rooms" },
+  { name: "Rooms", path: "/rooms" },
   { name: "Reviews", path: "/reviews" },
   { name: "Reservation", path: "/reserve" },
   { name: "Signup", path: "/auth" },

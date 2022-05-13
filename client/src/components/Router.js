@@ -8,7 +8,7 @@ import Rooms from "../pages/Rooms";
 function Router() {
   return (
     <Switch>
-      <Route exact path="/hotel_rooms">
+      <Route exact path="/rooms">
         <Rooms />
       </Route>
       <Route exact path="/auth">
