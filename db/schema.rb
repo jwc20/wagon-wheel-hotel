@@ -10,63 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_12_212202) do
+ActiveRecord::Schema.define(version: 2022_05_13_094943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "guest_invoices", force: :cascade do |t|
+  create_table "reservations", force: :cascade do |t|
     t.integer "guest_id"
-    t.integer "reservation_id"
-    t.decimal "invoice_amount"
-    t.datetime "ts_issued"
-    t.datetime "ts_paid"
-    t.datetime "ts_canceled"
+    t.integer "room_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "guests", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "phone"
-    t.string "address"
-    t.string "details"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "hotel_rooms", force: :cascade do |t|
-    t.string "room_name"
+  create_table "rooms", force: :cascade do |t|
+    t.integer "room_number"
+    t.string "room_type"
     t.text "description"
     t.decimal "current_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reservations", force: :cascade do |t|
-    t.integer "guest_id"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.decimal "total_price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "reserved_rooms", force: :cascade do |t|
-    t.integer "reservation_id"
-    t.integer "room_id"
-    t.decimal "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "username"
     t.string "email"
-    t.boolean "admin", default: false
     t.string "password_digest"
+    t.string "phone"
+    t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

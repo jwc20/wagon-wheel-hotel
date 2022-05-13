@@ -3,18 +3,23 @@ import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 
 function Auth() {
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [login, setLogin] = useState("");
   const [errors, setErrors] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
     const user = {
+      name,
       username,
       password,
       email,
+      phone,
     };
     fetch("/users", {
       method: "POST",
@@ -34,6 +39,19 @@ function Auth() {
     <div>
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
+        <div>
+          <label>
+            Name
+            <br />
+            <input
+              type="text"
+              value={name}
+              required
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+        </div>
+
         <div>
           <label>
             Username
@@ -72,6 +90,21 @@ function Auth() {
             />
           </label>
         </div>
+
+        <div>
+          <label>
+            Phone
+            <br />
+            <input
+              type="text"
+              value={phone}
+              required
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </label>
+        </div>
+
+
         <input type="submit" value="Submit" />
       </form>
     </div>

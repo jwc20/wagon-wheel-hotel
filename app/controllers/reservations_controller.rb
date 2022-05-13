@@ -2,12 +2,17 @@ class ReservationsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   def index
-    render json: Reservation.all
+    user = User.find_by(id: params[:guest_id])
+    if user
+      @reservations = user.reservations.order(:date)
+    else
+      render json: ["No User"], status: :not_found
+    end
   end
 
   def show
-    reservation = Reservation.find(params[:id])
-    render json: reservation
+    @reservation = Reservation.find(params[:id])
+    render json: @reservation
   end
 
   def create
@@ -18,7 +23,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.permit(:guest_id, :start_date, :end_date, :total_price)
+    params.permit(:guest_id, :room_id, :start_date, :end_date, :price)
   end
 
   def render_not_found_response

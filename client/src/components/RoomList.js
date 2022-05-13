@@ -6,7 +6,7 @@ function RoomList() {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch("/hotel_rooms")
+    fetch("/rooms")
       .then((r) => r.json())
       .then(setRooms);
   }, []);

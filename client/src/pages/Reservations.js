@@ -54,7 +54,7 @@ function Reservations() {
             <input
               type="integer"
               name="guest_id"
-              placeholder="Guest name"
+              placeholder="Guest ID"
               required
               onChange={(e) => setGuestID(e.target.value)}
             />

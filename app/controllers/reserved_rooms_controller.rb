@@ -1,2 +1,0 @@
-class ReservedRoomsController < ApplicationController
-end

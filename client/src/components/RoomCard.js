@@ -22,13 +22,13 @@ function RoomCard({ room }) {
   return (
     <div>
       <CCard className="h-100" style={{ width: "18rem" }}>
-        {room.description === "basic" ? (
+        {room.room_type === "basic" ? (
           <CCardImage orientation="top" src="https://i.imgur.com/HPWqqes.jpg" />
         ) : (
           <CCardImage orientation="top" src="https://i.imgur.com/0xBTIyF.jpg" />
         )}
         <CCardBody>
-          <CCardTitle>{room.room_name}</CCardTitle>
+          <CCardTitle>{room.room_number}</CCardTitle>
           <CButton onClick={() => setOpenModal("modal")} href="#">
             Description
           </CButton>
