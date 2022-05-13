@@ -1,4 +1,3 @@
-# DEVELOPMENT BRANCH
 
 # Wagon Wheel Hotel
 
