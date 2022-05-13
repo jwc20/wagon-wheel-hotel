@@ -25,13 +25,22 @@ const NavUnlisted = styled.ul`
 
 const links = [
   { name: "Home", path: "/" },
-  { name: "Rooms", path: "/rooms" },
+  { name: "Rooms", path: "/hotel_rooms" },
   { name: "Reviews", path: "/reviews" },
   { name: "Reservation", path: "/reserve" },
+  { name: "Signup", path: "/auth" },
   { name: "Login", path: "/login" },
+  { name: "Logout", path: "/logout" },
+
 ];
 
-function NavBar() {
+function NavBar({ onLogout }) {
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then(() => onLogout());
+  }
+
   return (
     <NavUnlisted>
       {links.map((link, index) => (
@@ -39,6 +48,7 @@ function NavBar() {
           <li>{link.name}</li>
         </NavLink>
       ))}
+      <button onClick={handleLogout}>Logout</button>
     </NavUnlisted>
   );
 }

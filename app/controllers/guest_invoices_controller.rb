@@ -1,0 +1,2 @@
+class GuestInvoicesController < ApplicationController
+end
